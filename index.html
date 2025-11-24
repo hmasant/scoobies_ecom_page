@@ -5,7 +5,282 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    .page-header,
+    .page__title,
+    .page-title,
+    h1.title {
+      display: none !important;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      color: #222;
+      background: #fff;
+    }
+    .product-page {
+      display: flex;
+      gap: 3rem;
+      padding: 3rem 5%;
+      flex-wrap: wrap;
+    }
+    .gallery {
+      flex: 1;
+      min-width: 300px;
+    }
+    .main-img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .thumbnails {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .thumbnails img {
+      width: 60px;
+      height: 80px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+    }
+    .product-details {
+      flex: 1;
+      min-width: 320px;
+    }
+    .product-details h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.2rem;
+    }
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #555;
+    }
+    .rating span {
+      color: gold;
+      font-size: 1.2rem;
+    }
+    .price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+    .tax-info {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .desc {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .color-dots {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.3rem;
+    }
+    .dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 1px solid #ccc;
+    }
+    .dot.grey {
+      background: #a8a8a8;
+    }
+    .dot.black {
+      background: #000;
+    }
+    .dot.white {
+      background: #f5f5f5;
+      border: 1px solid #aaa;
+    }
+    .dot.active {
+      border: 2px solid #000;
+    }
+    .size-section,
+    .quantity-section {
+      margin: 1rem 0;
+    }
+    select,
+    input[type="number"] {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 80px;
+    }
+    .add-btn,
+    .buy-btn {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 0.6rem;
+    }
+    .add-btn {
+      background: #000;
+      color: #fff;
+    }
+    .buy-btn {
+      background: #e60023;
+      color: #fff;
+    }
+    .delivery-info {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+    .delivery-info li {
+      margin: 0.4rem 0;
+    }
+    .payment-icons img {
+      height: 24px;
+      margin-right: 0.5rem;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+    .tab {
+      padding: 1rem 2rem;
+      background: none;
+      border: none;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tab.active {
+      border-bottom: 2px solid #000;
+      font-weight: 600;
+    }
+    .tab:hover {
+      color: #e60023;
+    }
+    .tab-content {
+      padding: 2rem 10%;
+      max-width: 800px;
+      margin: auto;
+      font-size: 0.95rem;
+      color: #444;
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tab-content ul {
+      padding-left: 20px;
+    }
+  </style>
   <body>
-    It's Working!!
+    <div class="product-page">
+      <div class="gallery">
+        <img src="main-image.jpg" alt="Stretch Strap Top" class="main-img" />
+        <div class="thumbnails">
+          <img src="thumb1.jpg" alt="" /> <img src="thumb2.jpg" alt="" />
+          <img src="thumb3.jpg" alt="" /> <img src="thumb4.jpg" alt="" />
+        </div>
+      </div>
+      <div class="product-details">
+        <h1>Stretch Strap Top</h1>
+        <div class="rating">
+          <span>★★★★☆</span>
+          <p>4.8 | Based on 152 reviews</p>
+        </div>
+        <p class="price">$79.99 <span class="tax-info">Tax included.</span></p>
+        <p class="desc">
+          The garment labeled as Committed are products that have been produced
+          using sustainable fibers or processes, reducing their environmental
+          impact.
+        </p>
+        <div class="color-section">
+          <p>Color: <strong>Grey</strong></p>
+          <div class="color-dots">
+            <span class="dot grey active"></span>
+            <span class="dot black"></span> <span class="dot white"></span>
+          </div>
+        </div>
+        <div class="size-section">
+          <label for="size">Size:</label>
+          <select id="size">
+            <option>XS</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          </select>
+        </div>
+        <div class="quantity-section">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" value="1" min="1" />
+        </div>
+        <button class="add-btn">Add to Cart</button>
+        <button class="buy-btn">Buy It Now</button>
+        <ul class="delivery-info">
+          <li>🚚 Free Delivery &amp; Returns</li>
+          <li>⭐ 30-day Return Policy</li>
+          <li>♻️ Sustainable Materials</li>
+        </ul>
+        <div class="payment-icons">
+          <img src="visa.png" alt="Visa" />
+          <img src="mastercard.png" alt="Mastercard" />
+          <img src="paypal.png" alt="PayPal" />
+        </div>
+      </div>
+    </div>
+    <div class="tabs">
+      <button class="tab active" data-tab="description">Description</button>
+      <button class="tab" data-tab="reviews">Customer Reviews</button>
+      <button class="tab" data-tab="shipping">Shipping &amp; Returns</button>
+      <button class="tab" data-tab="policies">Return Policies</button>
+    </div>
+    <div id="description" class="tab-content active">
+      <h3>STRETCH STRAP TOP</h3>
+      <p>
+        Knitted top made of a high-stretch fabric with a straight neckline and
+        thin straps. Slightly cropped fit. Seamless finish for a smooth and
+        comfortable wear.
+      </p>
+      <ul>
+        <li>Model height: 5'8" (173 cm)</li>
+        <li>Wearing size: S</li>
+        <li>Composition: 96% Polyamide, 4% Elastane</li>
+        <li>Care: Machine wash cold, do not tumble dry</li>
+      </ul>
+    </div>
+    <div id="reviews" class="tab-content">
+      <p>No reviews yet. Be the first to write one!</p>
+    </div>
+    <div id="shipping" class="tab-content">
+      <p>
+        Free shipping on all orders. Delivery within 5-7 business days. Returns
+        accepted within 30 days.
+      </p>
+    </div>
+    <div id="policies" class="tab-content">
+      <p>
+        We accept returns within 30 days of receipt. Items must be unused and in
+        original packaging.
+      </p>
+    </div>
+    <script>
+      const tabs = document.querySelectorAll(".tab");
+      const contents = document.querySelectorAll(".tab-content");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          contents.forEach((c) => c.classList.remove("active"));
+          tab.classList.add("active");
+          document.getElementById(tab.dataset.tab).classList.add("active");
+        });
+      });
+    </script>
   </body>
 </html>
